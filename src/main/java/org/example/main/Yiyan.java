@@ -206,7 +206,7 @@ public class Yiyan {
             if (zuoZhe && yiyan[1].length() > 0) {
                 label.setText(yiyan[0] + " -- " + yiyan[1]);
             } else {
-                label.setText(" " + yiyan[0] + " ");
+                label.setText(" " + yiyan[0]);
             }
 
             BufferedWriter bufferedWriter = null;
@@ -216,7 +216,12 @@ public class Yiyan {
                 yYText = new File("一言.txt");
                 fileWriter = new FileWriter(yYText, true);
                 bufferedWriter = new BufferedWriter(fileWriter);
-                bufferedWriter.write(yiyan[2]+" : " + yiyan[0] + yiyan[1] + "\n");
+                if(yiyan[1].length() > 0){
+                    bufferedWriter.write(yiyan[2]+" : " + yiyan[0] +" -- "+ yiyan[1] + "\n");
+                }else{
+                    bufferedWriter.write(yiyan[2]+" : " + yiyan[0] + "\n");
+                }
+                
 
                 bufferedWriter.flush();
             } catch (Exception e) {

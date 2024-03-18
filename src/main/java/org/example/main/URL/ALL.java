@@ -65,9 +65,9 @@ public class ALL {
     public void test(connface yiyan) {
         String[] conn = yiyan.conn();
         if (conn[0].length() > 0 && !conn[0].contains("出错了")) {
-            System.out.println("测试成功：" + yiyan.getId());
+            System.out.println("测试成功：" + yiyan.getId()+"\n");
         } else {
-            System.out.println("测试失败：" + yiyan.getId());
+            System.out.println("测试失败：" + yiyan.getId()+"\n");
         }
 
     }

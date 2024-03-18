@@ -62,7 +62,7 @@ public class Twelve_12 implements connface {
 
 
                 str[0] = hitokoto;
-                str[1] = "source";
+                str[1] = "";
                 str[2] = "" + id;
                 return str;
             }
