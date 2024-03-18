@@ -80,17 +80,12 @@ public class Yiyan {
                 int y = e.getYOnScreen() - offset.y;
                 frame.setLocation(x, y);
 
-                //窗口宽度
-                int width = frame.getWidth();
-
                 //屏幕大小
                 Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
                 int screenWidth = screenSize.width;
 
                 //窗口在屏幕中的位置
-                Point windowLocation = frame.getLocationOnScreen();
-                int windowX = windowLocation.x;
-                int windowY = windowLocation.y;
+
 
 
             }

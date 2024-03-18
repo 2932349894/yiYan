@@ -51,7 +51,7 @@ public class One_1 implements connface {
                 // 解析 JSON 数据
                 JSONObject jsonResponse = new JSONObject(response.toString());
                 String hitokoto = jsonResponse.getString("hitokoto");
-                String source = "";
+                String source = jsonResponse.getString("from_who");
                 try {
                     source = jsonResponse.getString("from_who");
                 } catch (Exception e) {
