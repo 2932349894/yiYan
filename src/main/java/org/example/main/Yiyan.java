@@ -203,27 +203,43 @@ public class Yiyan {
             } else {
                 label.setText(" " + yiyan[0]);
             }
-
+            
             BufferedWriter bufferedWriter = null;
             FileWriter fileWriter = null;
             File yYText;
-            try {
-                yYText = new File("一言.txt");
-                fileWriter = new FileWriter(yYText, true);
-                bufferedWriter = new BufferedWriter(fileWriter);
-                if(yiyan[1].length() > 0){
-                    bufferedWriter.write(yiyan[2]+" : " + yiyan[0] +" -- "+ yiyan[1] + "\n");
-                }else{
-                    bufferedWriter.write(yiyan[2]+" : " + yiyan[0] + "\n");
-                }
-                
+            if(!yiyan[0].equals("网路错误")){
 
-                bufferedWriter.flush();
-            } catch (Exception e) {
-            } finally {
-                bufferedWriter.close();
-                fileWriter.close();
+                try {
+                    yYText = new File("一言.txt");
+                    fileWriter = new FileWriter(yYText, true);
+                    bufferedWriter = new BufferedWriter(fileWriter);
+                    if(yiyan[1].length() > 0){
+                        bufferedWriter.write(yiyan[2]+" : " + yiyan[0] +" -- "+ yiyan[1] + "\n");
+                    }else{
+                        bufferedWriter.write(yiyan[2]+" : " + yiyan[0] + "\n");
+                    }
+
+
+                    bufferedWriter.flush();
+                } catch (Exception e) {
+                } finally {
+                    bufferedWriter.close();
+                    fileWriter.close();
+                }
+            }else {
+                try {
+                    yYText = new File("log.txt");
+                    fileWriter = new FileWriter(yYText, true);
+                    bufferedWriter = new BufferedWriter(fileWriter);
+                    bufferedWriter.write(yiyan[2]+" : " + yiyan[0] +"\n");
+                    bufferedWriter.flush();
+                } catch (Exception e) {
+                } finally {
+                    bufferedWriter.close();
+                    fileWriter.close();
+                } 
             }
+            
 
 
             // 淡入效果
